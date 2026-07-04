@@ -9,6 +9,7 @@ import org.example.ordenamiento.MergeSort;
 import org.example.ordenamiento.QuickSort;
 import org.example.ordenamiento.ShellSort;
 import org.example.recursividad.PromocionesBacktracking;
+import org.example.recursividad.TotalVentasRecursivo;
 
 public class Main {
     static void main() {
@@ -98,15 +99,32 @@ public class Main {
 //        }
 
         /* RECURSIVIDAD Y BACKTRACKING */
-        Plato[] platos = DatosPrueba.obtenerPlatos();
+//        Plato[] platos = DatosPrueba.obtenerPlatos();
+//
+//        double presupuesto = 80;
+//
+//        System.out.println("PRESUPUESTO DEL CLIENTE: S/" + presupuesto);
+//
+//        System.out.println("\nCOMBINACIONES POSIBLES\n");
+//
+//        PromocionesBacktracking.buscarCombinaciones(platos, presupuesto);
 
-        double presupuesto = 80;
+        /* RECURSIVIDAD Y LA PILA DE LLAMADAS DE METODOS */
+        Pedido[] pedidos = DatosPrueba.obtenerPedidos();
 
-        System.out.println("PRESUPUESTO DEL CLIENTE: S/" + presupuesto);
+        System.out.println("PEDIDOS DEL DÍA\n");
 
-        System.out.println("\nCOMBINACIONES POSIBLES\n");
+        for (Pedido pedido : pedidos) {
+            System.out.println(pedido);
+        }
 
-        PromocionesBacktracking.buscarCombinaciones(platos, presupuesto);
+        System.out.println("\nCalculando el total de ventas...\n");
+
+        double total = TotalVentasRecursivo.calcularTotal(pedidos, 0);
+
+        System.out.println("\n=================================");
+        System.out.println("TOTAL DE INGRESOS: S/" + total);
+        System.out.println("=================================");
 
     }
 }
