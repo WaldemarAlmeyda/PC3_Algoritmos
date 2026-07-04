@@ -8,6 +8,7 @@ import org.example.modelo.Plato;
 import org.example.ordenamiento.MergeSort;
 import org.example.ordenamiento.QuickSort;
 import org.example.ordenamiento.ShellSort;
+import org.example.recursividad.PromocionesBacktracking;
 
 public class Main {
     static void main() {
@@ -71,30 +72,41 @@ public class Main {
 //        }
 
         /* BUSQUEDA BINARIA */
+//        Plato[] platos = DatosPrueba.obtenerPlatos();
+//
+//        // Paso 1: Ordenar el catálogo
+//        QuickSort.ordenarPorNombre(platos);
+//
+//        System.out.println("CATÁLOGO ORDENADO\n");
+//
+//        for (Plato plato : platos) {
+//            System.out.println(plato);
+//        }
+//
+//        // Paso 2: Buscar un plato
+//        String nombreBuscado = "Parihuela";
+//
+//        System.out.println("\nBuscando: " + nombreBuscado);
+//
+//        Plato encontrado = BusquedaBinaria.buscarPorNombre(platos, nombreBuscado);
+//
+//        if (encontrado != null) {
+//            System.out.println("\nPLATO ENCONTRADO");
+//            System.out.println(encontrado);
+//        } else {
+//            System.out.println("\nEl plato no existe.");
+//        }
+
+        /* RECURSIVIDAD Y BACKTRACKING */
         Plato[] platos = DatosPrueba.obtenerPlatos();
 
-        // Paso 1: Ordenar el catálogo
-        QuickSort.ordenarPorNombre(platos);
+        double presupuesto = 80;
 
-        System.out.println("CATÁLOGO ORDENADO\n");
+        System.out.println("PRESUPUESTO DEL CLIENTE: S/" + presupuesto);
 
-        for (Plato plato : platos) {
-            System.out.println(plato);
-        }
+        System.out.println("\nCOMBINACIONES POSIBLES\n");
 
-        // Paso 2: Buscar un plato
-        String nombreBuscado = "Parihuela";
-
-        System.out.println("\nBuscando: " + nombreBuscado);
-
-        Plato encontrado = BusquedaBinaria.buscarPorNombre(platos, nombreBuscado);
-
-        if (encontrado != null) {
-            System.out.println("\nPLATO ENCONTRADO");
-            System.out.println(encontrado);
-        } else {
-            System.out.println("\nEl plato no existe.");
-        }
+        PromocionesBacktracking.buscarCombinaciones(platos, presupuesto);
 
     }
 }
